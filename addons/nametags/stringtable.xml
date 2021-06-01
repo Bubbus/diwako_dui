@@ -15,6 +15,15 @@
             <German>Namensschilder einschalten</German>
             <Japanese>ネームタグを有効化</Japanese>
         </Key>
+        <Key ID="STR_dui_cat_custom_titles">
+            <English>User Titles</English>
+        </Key>
+        <Key ID="STR_dui_nametags_title">
+            <English>Custom Name Title</English>
+        </Key>
+        <Key ID="STR_dui_nametags_title_desc">
+            <English>Choose some text to appear under your name when other people look at you.</English>
+        </Key>
         <Key ID="STR_dui_nametags_enableOcclusion">
             <English>Enable Nametag Occlusion</English>
             <Chinesesimp>启用名牌遮挡</Chinesesimp>

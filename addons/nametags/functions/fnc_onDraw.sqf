@@ -70,9 +70,12 @@ if (isNull _target || {!(player call EFUNC(main,canHudBeShown)) || {unitIsUAV _t
                 _color = EGVAR(main,colors_custom) getVariable ["dead", "#333333"];
                 _colorGroup = EGVAR(main,colors_custom) getVariable ["otherGroup", "#99D999"];; // Other Group Default Color
             };
+
             private _tags = "<t font='%1' color='%2' size='%3' shadow='%4'>";
             private _data = ["<t align='center' valign='middle'>"];
-            _data pushBack format [_tags, GVAR(fontName), _color, (GET_POS_H) * GVAR(fontNameSize), GVAR(nameFontShadow)];
+            private _fontScaleFactor = GET_FONT_SCALE_FACTOR;
+
+            _data pushBack format [_tags, GVAR(fontName), _color, _fontScaleFactor * GVAR(fontNameSize), GVAR(nameFontShadow)];
 
             if (GVAR(drawRank)) then {
                 _data pushBack format ["%1. ", _target getVariable [QGVAR(rank), rank _target]];
@@ -80,8 +83,20 @@ if (isNull _target || {!(player call EFUNC(main,canHudBeShown)) || {unitIsUAV _t
 
             _data pushBack (_target getVariable [QGVAR(name), name _target]);
 
+			private _title = _target getVariable [QGVAR(title), ""];
+
+			if (_title isNotEqualTo "") then
+			{
+				_data append ["</t>", "<br/>"];
+				_data pushBack format [_tags, GVAR(fontGroup), _color, _fontScaleFactor * GVAR(fontGroupNameSize) * 0.85, GVAR(groupFontShadow)];
+                _data pushBack _title;
+			};
+
+			_data append ["</t>", "<br/>"];
+            _data pushBack format [_tags, GVAR(fontGroup), _colorGroup, _fontScaleFactor * GVAR(fontGroupNameSize), GVAR(groupFontShadow)];
+
             _data append ["</t>", "<br/>"];
-            _data pushBack format [_tags, GVAR(fontGroup), _colorGroup, (GET_POS_H) * GVAR(fontGroupNameSize), GVAR(groupFontShadow)];
+            _data pushBack format [_tags, GVAR(fontGroup), _colorGroup, _fontScaleFactor * GVAR(fontGroupNameSize), GVAR(groupFontShadow)];
 
             _data pushBack (_target getVariable [QGVAR(groupName), groupID (group _target)]);
             _data append ["</t>", "</t>"];

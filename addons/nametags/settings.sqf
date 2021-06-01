@@ -213,3 +213,17 @@ private _curCat = "STR_dui_cat_custom_color";
         EGVAR(main,colors_custom) setVariable ["otherName", [(_this select 0) * 255,(_this select 1) * 255,(_this select 2) * 255] call EFUNC(main,toHex)];
     }
 ] call CBA_fnc_addSetting;
+
+private _curCat = "STR_dui_cat_custom_titles";
+
+[
+    QGVAR(title),
+    "EDITBOX",
+    ["STR_dui_nametags_title", "STR_dui_nametags_title_desc"],
+    [_cat, _curCat],
+    "",
+    2,
+    {
+        [_this] call FUNC(setPlayerTitle);
+    }
+] call CBA_fnc_addSetting;

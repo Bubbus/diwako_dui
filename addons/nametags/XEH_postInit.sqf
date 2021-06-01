@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+call FUNC(maintainTitleLoop);
+
 if !(hasInterface) exitWith {};
 
 GVAR(targetedFade) = 1;

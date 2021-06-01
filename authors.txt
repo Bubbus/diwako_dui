@@ -27,6 +27,7 @@ Fusselwurm (Performance improvements while game is paused or minmized)
 Brazzer (Medic icon switch between ACE/Vanilla)
 jokoho482 (Nametags)
 YRUSoPractised (chinese translations)
+Bubbus (Nametag user titles)
 
 Special thanks:
 alganthe (General Arma modding support)

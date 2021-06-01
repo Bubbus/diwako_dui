@@ -19,11 +19,13 @@
 #define POS_X 0.5 - (pixelW * 128)
 #define POS_Y 0.5 - pixelH
 #define POS_W pixelW * 256
-#define POS_H pixelH * 64
+#define POS_H pixelH * 128
 #define GET_POS_X profileNamespace getVariable ['igui_diwako_dui_nametags_x', POS_X]
 #define GET_POS_Y profileNamespace getVariable ['igui_diwako_dui_nametags_y', POS_Y]
 #define GET_POS_W profileNamespace getVariable ['igui_diwako_dui_nametags_w', POS_W]
 #define GET_POS_H profileNamespace getVariable ['igui_diwako_dui_nametags_h', POS_H]
+
+#define GET_FONT_SCALE_FACTOR (GET_POS_H) * 0.5
 
 /* ResetSettings
     profileNamespace setVariable ['igui_diwako_dui_nametags_x', nil];
