@@ -24,6 +24,12 @@
         <Key ID="STR_dui_nametags_title_desc">
             <English>Choose some text to appear under your name when other people look at you.</English>
         </Key>
+        <Key ID="STR_dui_nametags_showTitles">
+            <English>Show others' titles</English>
+        </Key>
+        <Key ID="STR_dui_nametags_showTitles_desc">
+            <English>Check this box to show people's custom titles.  If un-checked, their titles will be hidden from you.</English>
+        </Key>
         <Key ID="STR_dui_nametags_enableOcclusion">
             <English>Enable Nametag Occlusion</English>
             <Chinesesimp>启用名牌遮挡</Chinesesimp>

@@ -227,3 +227,12 @@ private _curCat = "STR_dui_cat_custom_titles";
         [_this] call FUNC(setPlayerTitle);
     }
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(showTitles),
+    "CHECKBOX",
+    ["STR_dui_nametags_showTitles", "STR_dui_nametags_showTitles_desc"],
+    [_cat, _curCat],
+    true,
+    2
+] call CBA_fnc_addSetting;

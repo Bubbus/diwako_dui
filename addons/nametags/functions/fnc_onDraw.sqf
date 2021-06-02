@@ -86,7 +86,7 @@ if (isNull _target || {!(player call EFUNC(main,canHudBeShown)) || {unitIsUAV _t
 
 			private _title = _target getVariable [QGVAR(customTitle), ""];
 
-			if (_title isNotEqualTo "") then
+			if ((_title isNotEqualTo "") and {true isEqualTo GVAR(showTitles)}) then
 			{
 				_data pushBack format [_tags, GVAR(fontGroup), _color, _fontScaleFactor * GVAR(fontGroupNameSize) * 0.85, GVAR(groupFontShadow)];
                 _data pushBack _title;

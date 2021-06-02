@@ -2,7 +2,7 @@
  * Author: Bubbus
  *
  * Maintain a player's title variable.  The title variable is purely client-only, so it cannot be handled serverside by fnc_cacheLoop.
- * Ensures value doesn't drift from player choice - handles setting changes and a *very* basic level of resiliency against variable modification on non-BE/arbitrary addon servers.
+ * Ensures value doesn't drift from local player choice.  Should only affect local player (not remote-controlled units etc).
  *
  * Public: No
  */
