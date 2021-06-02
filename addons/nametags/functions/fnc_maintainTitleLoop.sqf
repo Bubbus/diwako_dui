@@ -10,7 +10,7 @@
 #include "script_component.hpp"
 
 // Should only run clientside, managing the local player only.
-if !(hasInterface) exitWith {}
+if !(hasInterface) exitWith {};
 
 [{ call FUNC(maintainTitleLoop); }, [], 2] call CBA_fnc_waitAndExecute;
 
