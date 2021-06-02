@@ -73,7 +73,7 @@ if (isNull _target || {!(player call EFUNC(main,canHudBeShown)) || {unitIsUAV _t
 
             private _tags = "<t font='%1' color='%2' size='%3' shadow='%4'>";
             private _data = ["<t align='center' valign='middle'>"];
-            private _fontScaleFactor = GET_FONT_SCALE_FACTOR;
+            private _fontScaleFactor = FONT_SCALE_FACTOR;
 
             _data pushBack format [_tags, GVAR(fontName), _color, _fontScaleFactor * GVAR(fontNameSize), GVAR(nameFontShadow)];
 
