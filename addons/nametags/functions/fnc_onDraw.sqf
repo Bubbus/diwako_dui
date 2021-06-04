@@ -57,9 +57,11 @@ if (isNull _target || {!(player call EFUNC(main,canHudBeShown)) || {unitIsUAV _t
         GVAR(targetedFade) = [_target, _player] call FUNC(calculateFadeValue);
         if (GVAR(targetedFade) < 1) then {
             private _color = EGVAR(main,colors_custom) getVariable ["otherName", "#33FF00"]; // Other Group Default Color
+            private _colorTitle = EGVAR(main,colors_custom) getVariable ["otherTitle", "#33FF00"]; // Other Group Default Color
             private _colorGroup = EGVAR(main,colors_custom) getVariable ["otherGroup", "#99D999"]; // Other Group Default Color
             if ((group _target) isEqualTo (group _player)) then {
                 _color = _target getVariable [QEGVAR(main,color), "#FFFFFF"];
+                _colorTitle = EGVAR(main,colors_custom) getVariable ["title", "#FFFFFF"];
                 _colorGroup = EGVAR(main,colors_custom) getVariable ["group", "#FFFFFF"];
             };
             private _alive = alive _target;
@@ -68,7 +70,8 @@ if (isNull _target || {!(player call EFUNC(main,canHudBeShown)) || {unitIsUAV _t
             };
             if !(_alive) then {
                 _color = EGVAR(main,colors_custom) getVariable ["dead", "#333333"];
-                _colorGroup = EGVAR(main,colors_custom) getVariable ["otherGroup", "#99D999"];; // Other Group Default Color
+                _colorTitle = EGVAR(main,colors_custom) getVariable ["dead", "#333333"];
+                _colorGroup = EGVAR(main,colors_custom) getVariable ["otherGroup", "#99D999"]; // Other Group Default Color
             };
 
             private _tags = "<t font='%1' color='%2' size='%3' shadow='%4'>";
@@ -86,11 +89,23 @@ if (isNull _target || {!(player call EFUNC(main,canHudBeShown)) || {unitIsUAV _t
 
 			private _title = _target getVariable [QGVAR(customTitle), ""];
 
-			if ((_title isNotEqualTo "") and {true isEqualTo GVAR(showTitles)}) then
+			if (_title isNotEqualTo "") then
 			{
-				_data pushBack format [_tags, GVAR(fontGroup), _color, _fontScaleFactor * GVAR(fontGroupNameSize) * 0.85, GVAR(groupFontShadow)];
-                _data pushBack _title;
-                _data append ["</t>", "<br/>"];
+                private _showTitle = if (isPlayer _target) then
+                {
+                    true isEqualTo GVAR(showTitles)
+                }
+                else
+                {
+                    true isEqualTo GVAR(showTitlesAi)
+                };
+
+                if (_showTitle) then
+                {
+                    _data pushBack format [_tags, GVAR(fontTitle), _colorTitle, _fontScaleFactor * GVAR(fontTitleSize), GVAR(titleFontShadow)];
+                    _data pushBack _title;
+                    _data append ["</t>", "<br/>"];
+                };
 			};
 
             _data pushBack format [_tags, GVAR(fontGroup), _colorGroup, _fontScaleFactor * GVAR(fontGroupNameSize), GVAR(groupFontShadow)];

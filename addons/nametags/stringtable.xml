@@ -25,10 +25,16 @@
             <English>Choose some text to appear under your name when other people look at you.</English>
         </Key>
         <Key ID="STR_dui_nametags_showTitles">
-            <English>Show others' titles</English>
+            <English>Show Player Titles</English>
         </Key>
         <Key ID="STR_dui_nametags_showTitles_desc">
             <English>Check this box to show people's custom titles.  If un-checked, their titles will be hidden from you.</English>
+        </Key>
+        <Key ID="STR_dui_nametags_showTitlesAi">
+            <English>Show AI Titles</English>
+        </Key>
+        <Key ID="STR_dui_nametags_showTitlesAi_desc">
+            <English>Check this box to show custom titles for AI units (as set by mods or mission-makers).  If un-checked, their titles will be hidden from you.</English>
         </Key>
         <Key ID="STR_dui_nametags_enableOcclusion">
             <English>Enable Nametag Occlusion</English>
@@ -93,6 +99,12 @@
             <German>Die Schriftart, die für den Namen im Namensschild verwendet wird</German>
             <Japanese>ネームタグ内の名前に適用されます。</Japanese>
         </Key>
+        <Key ID="STR_dui_nametags_titleFont">
+            <English>Title Font</English>
+        </Key>
+        <Key ID="STR_dui_nametags_titleFont_desc">
+            <English>The Font that is used for the Title in the Nametag</English>
+        </Key>
         <Key ID="STR_dui_nametags_groupNameFont">
             <English>Group Name Font</English>
             <Chinesesimp>团队名称字体</Chinesesimp>
@@ -120,6 +132,12 @@
             <Chinese>名稱字體大小</Chinese>
             <German>Die Skalierung, die für den Namen angewendet wird</German>
             <Japanese>名前の大きさを設定します。</Japanese>
+        </Key>
+        <Key ID="STR_dui_nametags_fontTitleSize">
+            <English>Title Font Scale</English>
+        </Key>
+        <Key ID="STR_dui_nametags_fontTitleSize_desc">
+            <English>The Scaling that is Applied to the Title</English>
         </Key>
         <Key ID="STR_dui_nametags_fontGroupNameSize">
             <English>Group Name Font Scale</English>
@@ -162,6 +180,18 @@
             <Chinese>當一個單位和你一個團隊時，他團隊名稱會顯示的顔色</Chinese>
             <German>Die Farbe, die der Gruppenname haben wird, wenn die Einheit zu Ihrer Gruppe gehört.</German>
             <Japanese>自グループに属するユニットのグループ名に表示される色を設定します。</Japanese>
+        </Key>
+        <Key ID="STR_dui_nametags_titleColor">
+            <English>Title Color</English>
+        </Key>
+        <Key ID="STR_dui_nametags_titleColor_desc">
+            <English>The Color the Title will have if the Unit is in your Group.</English>
+        </Key>
+        <Key ID="STR_dui_nametags_titleOtherColor">
+            <English>Other Group Title Color</English>
+        </Key>
+        <Key ID="STR_dui_nametags_titleOtherColor_desc">
+            <English>The Color Other Unit Titles are showed in that are not in your Group.</English>
         </Key>
         <Key ID="STR_dui_nametags_groupNameOtherColor">
             <English>Other Group Color</English>
@@ -232,6 +262,9 @@
             <Chinese>名稱陰影</Chinese>
             <German>Namensschatten</German>
             <Japanese>名前の影</Japanese>
+        </Key>
+        <Key ID="STR_dui_nametags_titleShadow">
+            <English>Title Shadow</English>
         </Key>
         <Key ID="STR_dui_nametags_groupShadow">
             <English>Group Shadow</English>

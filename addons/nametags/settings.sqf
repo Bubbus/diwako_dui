@@ -109,6 +109,15 @@ private _curCat = "STR_dui_cat_fonts";
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(fontTitle),
+    "LIST",
+    ["STR_dui_nametags_titleFont", "STR_dui_nametags_titleFont_desc"],
+    [_cat, _curCat],
+    [EGVAR(main,availableFonts), EGVAR(main,availableFonts), 5],
+    false
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(fontGroup),
     "LIST",
     ["STR_dui_nametags_groupNameFont", "STR_dui_nametags_groupNameFont_desc"],
@@ -121,6 +130,19 @@ private _curCat = "STR_dui_cat_fonts";
     QGVAR(nameFontShadow),
     "LIST",
     ["STR_dui_nametags_nameShadow", ""],
+    [_cat, _curCat],
+    [[0, 1, 2], [
+        localize "STR_dui_namelist_text_shadow_0",
+        localize "STR_dui_namelist_text_shadow_1",
+        localize "STR_dui_namelist_text_shadow_2"
+    ], 1],
+    false
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(titleFontShadow),
+    "LIST",
+    ["STR_dui_nametags_titleShadow", ""],
     [_cat, _curCat],
     [[0, 1, 2], [
         localize "STR_dui_namelist_text_shadow_0",
@@ -153,6 +175,15 @@ private _curCat = "STR_dui_cat_fonts";
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(fontTitleSize),
+    "SLIDER",
+    ["STR_dui_nametags_fontTitleSize", "STR_dui_nametags_fontTitleSize_desc"],
+    [_cat, _curCat],
+    [0, 20, 8, 1],
+    false
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(fontGroupNameSize),
     "SLIDER",
     ["STR_dui_nametags_fontGroupNameSize", "STR_dui_nametags_fontGroupNameSize_desc"],
@@ -173,6 +204,19 @@ private _curCat = "STR_dui_cat_custom_color";
     {
         EGVAR(main,colors_custom) setVariable ["dead_compass", _this select [0, 3]];
         EGVAR(main,colors_custom) setVariable ["dead", [(_this select 0) * 255,(_this select 1) * 255,(_this select 2) * 255] call EFUNC(main,toHex)];
+    }
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(titleColor),
+    "COLOR",
+    ["STR_dui_nametags_titleColor", "STR_dui_nametags_titleColor_desc"],
+    [_cat, _curCat],
+    [1, 1, 1, 1],
+    false,
+    {
+        EGVAR(main,colors_custom) setVariable ["title_compass", _this select [0, 3]];
+        EGVAR(main,colors_custom) setVariable ["title", [(_this select 0) * 255,(_this select 1) * 255,(_this select 2) * 255] call EFUNC(main,toHex)];
     }
 ] call CBA_fnc_addSetting;
 
@@ -201,6 +245,20 @@ private _curCat = "STR_dui_cat_custom_color";
         EGVAR(main,colors_custom) setVariable ["otherGroup", [(_this select 0) * 255,(_this select 1) * 255,(_this select 2) * 255] call EFUNC(main,toHex)];
     }
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(titleOtherGroupColor),
+    "COLOR",
+    ["STR_dui_nametags_titleOtherColor", "STR_dui_nametags_titleOtherColor_desc"],
+    [_cat, _curCat],
+    [0.6, 0.85, 0.6, 1],
+    false,
+    {
+        EGVAR(main,colors_custom) setVariable ["otherTitle_compass", _this select [0, 3]];
+        EGVAR(main,colors_custom) setVariable ["otherTitle", [(_this select 0) * 255,(_this select 1) * 255,(_this select 2) * 255] call EFUNC(main,toHex)];
+    }
+] call CBA_fnc_addSetting;
+
 [
     QGVAR(groupNameOtherGroupColor),
     "COLOR",
@@ -235,4 +293,12 @@ private _curCat = "STR_dui_cat_custom_titles";
     [_cat, _curCat],
     true,
     2
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(showTitlesAi),
+    "CHECKBOX",
+    ["STR_dui_nametags_showTitlesAi", "STR_dui_nametags_showTitlesAi_desc"],
+    [_cat, _curCat],
+    true
 ] call CBA_fnc_addSetting;
