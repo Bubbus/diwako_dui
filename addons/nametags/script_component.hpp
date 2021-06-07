@@ -21,10 +21,10 @@
 #define POS_Y 0.5 - pixelH
 #define POS_W pixelW * 256
 #define POS_H pixelH * 128
-#define GET_POS_X profileNamespace getVariable ['igui_diwako_dui_nametags_x', POS_X]
-#define GET_POS_Y profileNamespace getVariable ['igui_diwako_dui_nametags_y', POS_Y]
-#define GET_POS_W profileNamespace getVariable ['igui_diwako_dui_nametags_w', POS_W]
-#define GET_POS_H profileNamespace getVariable ['igui_diwako_dui_nametags_h', POS_H]
+#define GET_POS_X (POS_X)
+#define GET_POS_Y (POS_Y)
+#define GET_POS_W (POS_W)
+#define GET_POS_H (POS_H)
 
 #define FONT_SCALE_FACTOR pixelH * 64
 
