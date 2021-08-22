@@ -17,10 +17,10 @@
 #define IDC_NAMETAG 1337006
 #define MAX_TITLE_CHARS 100
 
-#define POS_X 0.5 - (pixelW * 128)
+#define POS_X 0.5 - (pixelW * 256)
 #define POS_Y 0.5 - pixelH
-#define POS_W pixelW * 256
-#define POS_H pixelH * 128
+#define POS_W pixelW * 512
+#define POS_H pixelH * 256
 #define GET_POS_X (POS_X)
 #define GET_POS_Y (POS_Y)
 #define GET_POS_W (POS_W)
