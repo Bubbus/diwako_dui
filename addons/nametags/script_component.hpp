@@ -15,7 +15,7 @@
 #include "\z\diwako_dui\addons\main\script_macros.hpp"
 
 #define IDC_NAMETAG 1337006
-#define MAX_TITLE_CHARS 100
+#define MAX_TITLE_CHARS 35
 
 #define POS_X 0.5 - (pixelW * 256)
 #define POS_Y 0.5 - pixelH

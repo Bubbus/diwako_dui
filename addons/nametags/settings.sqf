@@ -113,7 +113,7 @@ private _curCat = "STR_dui_cat_fonts";
     "LIST",
     ["STR_dui_nametags_titleFont", "STR_dui_nametags_titleFont_desc"],
     [_cat, _curCat],
-    [EGVAR(main,availableFonts), EGVAR(main,availableFonts), 6],
+    [EGVAR(main,availableFonts), EGVAR(main,availableFonts), 4],
     false
 ] call CBA_fnc_addSetting;
 
